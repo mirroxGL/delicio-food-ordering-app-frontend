@@ -1,12 +1,7 @@
 import { useGetMyOrders } from "../../api/OrderApi";
 import OrderStatusDetail from "@/components/OrderStatusDetail";
 import OrderStatusHeader from "@/components/OrderStatusHeader";
-// import OrderStatusDetail from "@/components/OrderStatusDetail";
-// import OrderStatusHeader from "@/components/OrderStatusHeader";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Order } from "@/types";
-
-
 
 const OrderStatusPage = () => {
   const { orders, isLoading } = useGetMyOrders();
@@ -21,7 +16,7 @@ const OrderStatusPage = () => {
 
   return (
     <div className="space-y-10">
-      {orders.map((order: Order) => (
+      {orders.map((order) => (
         <div className="space-y-10 bg-gray-50 p-10 rounded-lg">
           <OrderStatusHeader order={order} />
           <div className="grid gap-10 md:grid-cols-2">
